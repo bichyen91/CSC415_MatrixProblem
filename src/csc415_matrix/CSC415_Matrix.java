@@ -1,34 +1,36 @@
 package csc415_matrix;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class CSC415_Matrix {
 
     public static void setZeros(int[][] arr) {
         int n = arr.length;
-        Map<Integer, List<Integer>> position = new HashMap<>();
-        List<Integer> col;
+        List<Integer> row = new ArrayList<>();
+        HashSet<Integer> col = new HashSet();
         for (int r = 0; r < n; r++) {
-            col = new ArrayList<>();
             for (int c = 0; c < n; c++) {
                 if (arr[r][c] == 0) {
-                    col.add(c);
+                    row.add(r);
+                    if (!col.contains(c)) {
+                        col.add(c);
+                    }
+                    break;
                 }
-            }
-            if (!col.isEmpty()) {
-                position.put(r, col);
             }
         }
 
-        for (Integer r : position.keySet()) {
-            for (Integer c : position.get(r)) {
-                for (int i = 0; i < n; i++) {
-                    arr[i][c] = 0;
-                    arr[r][i] = 0;
-                }
+        for (int i = 0; i < n; i++) {
+            for (Integer r : row) {
+                arr[r][i] = 0;
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            for (Integer c : col) {
+                arr[i][c] = 0;
             }
         }
     }
@@ -73,6 +75,7 @@ public class CSC415_Matrix {
         setZeros(arrB);
         System.out.println("\nRevised array B: ");
         printArray(arrB);
+        System.out.println("");
     }
 }
 
