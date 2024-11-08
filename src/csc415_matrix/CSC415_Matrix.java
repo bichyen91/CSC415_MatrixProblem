@@ -63,17 +63,17 @@ public class CSC415_Matrix {
             {5, 2, 3, 4, 9, 5, 2, 4},
             {5, 2, 1, 6, 3, 2, 4, 6}
         };
-        System.out.println("Initial array A: ");
+        System.out.println("Original matrix A: ");
         printArray(arrA);
         setZeros(arrA);
-        System.out.println("\nRevised array A: ");
+        System.out.println("\nMatrix A after cleaning: ");
         printArray(arrA);
 
         System.out.println("\n");
-        System.out.println("Initial array B: ");
+        System.out.println("Original matrix B: ");
         printArray(arrB);
         setZeros(arrB);
-        System.out.println("\nRevised array B: ");
+        System.out.println("\nMatrix B after cleaning: ");
         printArray(arrB);
         System.out.println("");
     }
