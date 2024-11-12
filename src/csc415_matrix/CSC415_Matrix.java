@@ -78,21 +78,3 @@ public class CSC415_Matrix {
         System.out.println("");
     }
 }
-
-//    public boolean isSafe(int[][] board, int col, int row) {
-//        //Checking horizotal
-//        for (int c = 0; c < board[row].length; c++) {
-//            if (board[row][c] == 1) {
-//                return false;
-//            }
-//        }
-//        //Check Vertical
-//        for (int r = 0; r < board.length; r++) {
-//            if (board[r][col] == 1) {
-//                return false;
-//            }
-//        }
-//
-//        //Check /
-//        //check \
-//    }
